@@ -87,7 +87,7 @@ function authorizeToHome(){
 
 async function fetchLogin(data) {
   try {
-    const response = await fetch("http://localhost:7074/exuser/managementHome", {
+    const response = await fetch("http://170-187-238-58.ip.linodeusercontent.com:7074/exuser/managementHome", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -140,7 +140,7 @@ function saveUser(){
 
 async function saveUserInMongo(data) {
   try {
-    const response = await fetch("http://localhost:7074/exuser/validateUserCreation", {
+    const response = await fetch("http://170-187-238-58.ip.linodeusercontent.com:7074/exuser/validateUserCreation", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -167,7 +167,7 @@ async function saveUserInMongo(data) {
 }
 
 async function getAllWebsites() {
-  const response = await fetch("http://localhost:7074/exuser/allWebsite");
+  const response = await fetch("http://170-187-238-58.ip.linodeusercontent.com:7074/exuser/allWebsite");
   const websites = await response.json();
   return websites;
 }
@@ -184,7 +184,7 @@ async function  showAllWebsites() {
 showAllWebsites();
 
 async function getAllChild() {
-  const response = await fetch("http://localhost:7074/exuser/allchild");
+  const response = await fetch("http://170-187-238-58.ip.linodeusercontent.com:7074/exuser/allchild");
   const childs = await response.json();
   return childs;
 }
@@ -197,7 +197,7 @@ async function  showAllChild() {
     childs.innerHTML+=`
         <tr id="sadmin" style="display: table-row;text-align: end;" main_userid="sadmin">
         <td id="accountCol" style="text-align: start;" class="align-L">
-        <span class="lv_4" style="background:#568BC8; padding:1px">DIR</span><a id="userDataLink" href="http://localhost:7074/home?userid=${child.id}&usertype=${child.usertype+1}">${child.userid}</a>
+        <span class="lv_4" style="background:#568BC8; padding:1px">DIR</span><a id="userDataLink" href="http://170-187-238-58.ip.linodeusercontent.com:7074/home?userid=${child.id}&usertype=${child.usertype+1}">${child.userid}</a>
         </td>
         <td class="credit-amount-member">
           <a id="creditRefBtn" class="favor-set" href="#">0.00 </a>
@@ -298,7 +298,7 @@ function checkUserAvailable(){
 
 async function checkOnDatabase(data) {
   try {
-    const response = await fetch("http://localhost:7074/exuser/checkuser", {
+    const response = await fetch("http://170-187-238-58.ip.linodeusercontent.com:7074/exuser/checkuser", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -352,7 +352,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 async function getParentChild(){
   const userid = getQueryParam('userid');
   const usertype = getQueryParam('usertype');
-  const response = await fetch(`http://localhost:7074/exuser/${userid}/${usertype}`);
+  const response = await fetch(`http://170-187-238-58.ip.linodeusercontent.com:7074/exuser/${userid}/${usertype}`);
   const childs = await response.json();
   console.log(childs)
   return childs;
