@@ -1,4 +1,4 @@
-FROM openjdk:17-jre-slim
+FROM adoptopenjdk:17-jre-hotspot
 WORKDIR /app
 COPY target/SkyExchange-0.0.1-SNAPSHOT.jar .
 EXPOSE 8761
